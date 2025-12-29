@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lennon Barber Shop</title>
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* PALETA BASEADA NA LOGO */
+    :root {
+      --preto: #0f0f0f;
+      --preto-sec: #1b1b1b;
+      --dourado: #c9a24d;
+      --branco: #ffffff;
+      --cinza: #cccccc;
+    }
+
+    body {
+      background-color: var(--preto);
+      color: var(--branco);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(to bottom, #000, #1b1b1b);
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      color: var(--dourado);
+      font-size: 2.6rem;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      margin-top: 10px;
+      color: var(--cinza);
+      font-size: 1.1rem;
+    }
+
+    /* SEÇÕES */
+    section {
+      padding: 60px 0;
+    }
+
+    section h2 {
+      text-align: center;
+      color: var(--dourado);
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    /* TABELA DE PREÇOS */
+    .prices {
+      display: grid;
+      gap: 15px;
+    }
+
+    .price-item {
+      background-color: var(--preto-sec);
+      border: 1px solid #2a2a2a;
+      padding: 18px 20px;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price-item span {
+      font-size: 1rem;
+    }
+
+    .price-item strong {
+      color: var(--dourado);
+      font-size: 1.1rem;
+    }
+
+    /* INFO */
+    .info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      text-align: center;
+    }
+
+    .info-box {
+      background-color: var(--preto-sec);
+      padding: 25px;
+      border-radius: 6px;
+      border: 1px solid #2a2a2a;
+    }
+
+    .info-box h3 {
+      color: var(--dourado);
+      margin-bottom: 10px;
+    }
+
+    /* CONTATO */
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      margin-bottom: 25px;
+      font-size: 1.1rem;
+    }
+
+    .btn-whatsapp {
+      background-color: var(--dourado);
+      color: #000;
+      padding: 15px 35px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: opacity 0.3s;
+    }
+
+    .btn-whatsapp:hover {
+      opacity: 0.85;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: var(--preto-sec);
+      padding: 20px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
+      border-top: 1px solid #2a2a2a;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      section h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <h1>Lennon Barber Shop</h1>
+      <p>Estilo, atitude e cuidado em cada detalhe</p>
+    </div>
+  </header>
+
+  <!-- PREÇOS -->
+  <section>
+    <div class="container">
+      <h2>Tabela de Preços</h2>
+
+      <div class="prices">
+        <div class="price-item"><span>2 pentes</span><strong>R$ 25</strong></div>
+        <div class="price-item"><span>Social</span><strong>R$ 30</strong></div>
+        <div class="price-item"><span>Degradê</span><strong>R$ 35</strong></div>
+        <div class="price-item"><span>Tesoura</span><strong>R$ 35</strong></div>
+        <div class="price-item"><span>Barba</span><strong>R$ 30</strong></div>
+        <div class="price-item"><span>Sobrancelha</span><strong>R$ 10</strong></div>
+        <div class="price-item"><span>Combo 1 (cabelo + barba)</span><strong>R$ 60</strong></div>
+        <div class="price-item"><span>Combo 2 (cabelo + barba + sobrancelha)</span><strong>R$ 70</strong></div>
+        <div class="price-item"><span>Combo c/ Barbotearapia</span><strong>R$ 80</strong></div>
+        <div class="price-item"><span>Barbotearapia</span><strong>R$ 50</strong></div>
+        <div class="price-item"><span>Limpeza de pele</span><strong>R$ 30</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFORMAÇÕES -->
+  <section>
+    <div class="container">
+      <h2>Informações</h2>
+
+      <div class="info">
+        <div class="info-box">
+          <h3>Horário</h3>
+          <p>
+            Segunda a Sexta<br>
+            09h às 19h<br><br>
+            Sábado<br>
+            09h às 17h
+          </p>
+        </div>
+
+        <div class="info-box">
+          <h3>Localização</h3>
+          <p>
+            Rua Exemplo, 123<br>
+            Centro<br>
+            Campo Grande - MS
+          </p>
+        </div>
+
+        <div class="info-box">
+          <h3>Contato</h3>
+          <p>
+            WhatsApp<br>
+            (67) 99999-9999
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section>
+    <div class="container contact">
+      <h2>Agende seu horário</h2>
+      <p>Entre em contato agora mesmo pelo WhatsApp</p>
+
+      <a 
+        class="btn-whatsapp" 
+        href="https://wa.me/5567999999999" 
+        target="_blank">
+        Chamar no WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Lennon Barber Shop • Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+</body>
+</html>
