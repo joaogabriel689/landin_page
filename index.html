@@ -14,7 +14,7 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    /* PALETA BASEADA NA LOGO */
+    /* PALETA */
     :root {
       --preto: #0f0f0f;
       --preto-sec: #1b1b1b;
@@ -31,45 +31,115 @@
 
     .container {
       width: 90%;
-      max-width: 1100px;
+      max-width: 1200px;
       margin: auto;
     }
 
     /* HEADER */
     header {
       background: linear-gradient(to bottom, #000, #1b1b1b);
-      padding: 80px 0;
-      text-align: center;
+      border-bottom: 1px solid #2a2a2a;
     }
 
-    header h1 {
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+
+    .logo span {
       color: var(--dourado);
-      font-size: 2.6rem;
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 25px;
+    }
+
+    .menu a {
+      color: var(--cinza);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .menu a:hover {
+      color: var(--dourado);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 100px 0;
+      text-align: center;
+      background: radial-gradient(circle at top, #1b1b1b, #000);
+    }
+
+    .hero h1 {
+      color: var(--dourado);
+      font-size: 2.8rem;
+      margin-bottom: 15px;
       letter-spacing: 2px;
     }
 
-    header p {
-      margin-top: 10px;
+    .hero p {
       color: var(--cinza);
       font-size: 1.1rem;
+      max-width: 600px;
+      margin: auto;
     }
 
     /* SEÇÕES */
     section {
-      padding: 60px 0;
+      padding: 80px 0;
     }
 
     section h2 {
       text-align: center;
       color: var(--dourado);
-      font-size: 2rem;
-      margin-bottom: 40px;
+      font-size: 2.1rem;
+      margin-bottom: 50px;
     }
 
-    /* TABELA DE PREÇOS */
+    /* GALERIA */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery div {
+      background-color: var(--preto-sec);
+      height: 220px;
+      border-radius: 8px;
+      border: 1px solid #2a2a2a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    /* PREÇOS */
     .prices {
       display: grid;
       gap: 15px;
+      max-width: 700px;
+      margin: auto;
     }
 
     .price-item {
@@ -79,36 +149,30 @@
       border-radius: 6px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-    }
-
-    .price-item span {
-      font-size: 1rem;
     }
 
     .price-item strong {
       color: var(--dourado);
-      font-size: 1.1rem;
     }
 
     /* INFO */
     .info {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 25px;
-      text-align: center;
     }
 
     .info-box {
       background-color: var(--preto-sec);
-      padding: 25px;
-      border-radius: 6px;
+      padding: 30px;
+      border-radius: 8px;
       border: 1px solid #2a2a2a;
+      text-align: center;
     }
 
     .info-box h3 {
       color: var(--dourado);
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
     /* CONTATO */
@@ -116,19 +180,15 @@
       text-align: center;
     }
 
-    .contact p {
-      margin-bottom: 25px;
-      font-size: 1.1rem;
-    }
-
     .btn-whatsapp {
+      display: inline-block;
+      margin-top: 25px;
       background-color: var(--dourado);
       color: #000;
-      padding: 15px 35px;
+      padding: 16px 40px;
       text-decoration: none;
       font-weight: bold;
       border-radius: 6px;
-      transition: opacity 0.3s;
     }
 
     .btn-whatsapp:hover {
@@ -138,7 +198,7 @@
     /* FOOTER */
     footer {
       background-color: var(--preto-sec);
-      padding: 20px 0;
+      padding: 25px 0;
       text-align: center;
       font-size: 0.9rem;
       color: #aaa;
@@ -146,105 +206,107 @@
     }
 
     /* RESPONSIVO */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
       }
 
-      section h2 {
-        font-size: 1.6rem;
+      .hero h1 {
+        font-size: 2.2rem;
       }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="container">
-      <h1>Lennon Barber Shop</h1>
-      <p>Estilo, atitude e cuidado em cada detalhe</p>
+<header>
+  <div class="container nav">
+    <div class="logo">
+      <!-- Substitua pelo caminho da logo -->
+      <img src="logo.png" alt="Lennon Barber Shop">
+      <span>Lennon Barber</span>
     </div>
-  </header>
 
-  <!-- PREÇOS -->
-  <section>
-    <div class="container">
-      <h2>Tabela de Preços</h2>
+    <nav class="menu">
+      <a href="#">Início</a>
+      <a href="#">Serviços</a>
+      <a href="#">Galeria</a>
+      <a href="#">Contato</a>
+    </nav>
+  </div>
+</header>
 
-      <div class="prices">
-        <div class="price-item"><span>2 pentes</span><strong>R$ 25</strong></div>
-        <div class="price-item"><span>Social</span><strong>R$ 30</strong></div>
-        <div class="price-item"><span>Degradê</span><strong>R$ 35</strong></div>
-        <div class="price-item"><span>Tesoura</span><strong>R$ 35</strong></div>
-        <div class="price-item"><span>Barba</span><strong>R$ 30</strong></div>
-        <div class="price-item"><span>Sobrancelha</span><strong>R$ 10</strong></div>
-        <div class="price-item"><span>Combo 1 (cabelo + barba)</span><strong>R$ 60</strong></div>
-        <div class="price-item"><span>Combo 2 (cabelo + barba + sobrancelha)</span><strong>R$ 70</strong></div>
-        <div class="price-item"><span>Combo c/ Barbotearapia</span><strong>R$ 80</strong></div>
-        <div class="price-item"><span>Barbotearapia</span><strong>R$ 50</strong></div>
-        <div class="price-item"><span>Limpeza de pele</span><strong>R$ 30</strong></div>
+<section class="hero">
+  <div class="container">
+    <h1>Lennon Barber Shop</h1>
+    <p>Estilo, atitude e cuidado em cada detalhe. Uma experiência completa para quem valoriza aparência e confiança.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Nosso Espaço</h2>
+
+    <div class="gallery">
+      <div>Imagem do ambiente</div>
+      <div>Imagem do corte</div>
+      <div>Imagem da barba</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Tabela de Preços</h2>
+
+    <div class="prices">
+      <div class="price-item"><span>2 pentes</span><strong>R$ 25</strong></div>
+      <div class="price-item"><span>Social</span><strong>R$ 30</strong></div>
+      <div class="price-item"><span>Degradê</span><strong>R$ 35</strong></div>
+      <div class="price-item"><span>Barba</span><strong>R$ 30</strong></div>
+      <div class="price-item"><span>Combo (cabelo + barba)</span><strong>R$ 60</strong></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Informações</h2>
+
+    <div class="info">
+      <div class="info-box">
+        <h3>Horário</h3>
+        <p>Seg a Sex: 09h às 19h<br>Sáb: 09h às 17h</p>
+      </div>
+
+      <div class="info-box">
+        <h3>Localização</h3>
+        <p>Rua Exemplo, 123<br>Centro – Campo Grande/MS</p>
+      </div>
+
+      <div class="info-box">
+        <h3>Contato</h3>
+        <p>(67) 99999-9999</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- INFORMAÇÕES -->
-  <section>
-    <div class="container">
-      <h2>Informações</h2>
+<section>
+  <div class="container contact">
+    <h2>Agende seu horário</h2>
+    <a class="btn-whatsapp" href="https://wa.me/5567999999999" target="_blank">
+      Chamar no WhatsApp
+    </a>
+  </div>
+</section>
 
-      <div class="info">
-        <div class="info-box">
-          <h3>Horário</h3>
-          <p>
-            Segunda a Sexta<br>
-            09h às 19h<br><br>
-            Sábado<br>
-            09h às 17h
-          </p>
-        </div>
-
-        <div class="info-box">
-          <h3>Localização</h3>
-          <p>
-            Rua Exemplo, 123<br>
-            Centro<br>
-            Campo Grande - MS
-          </p>
-        </div>
-
-        <div class="info-box">
-          <h3>Contato</h3>
-          <p>
-            WhatsApp<br>
-            (67) 99999-9999
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTATO -->
-  <section>
-    <div class="container contact">
-      <h2>Agende seu horário</h2>
-      <p>Entre em contato agora mesmo pelo WhatsApp</p>
-
-      <a 
-        class="btn-whatsapp" 
-        href="https://wa.me/5567999999999" 
-        target="_blank">
-        Chamar no WhatsApp
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p>© 2025 Lennon Barber Shop • Todos os direitos reservados</p>
-    </div>
-  </footer>
+<footer>
+  <div class="container">
+    © 2025 Lennon Barber Shop • Todos os direitos reservados
+  </div>
+</footer>
 
 </body>
 </html>
